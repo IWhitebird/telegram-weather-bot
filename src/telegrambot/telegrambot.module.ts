@@ -1,7 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TelegrambotService } from './telegrambot.service';
+import { UsersModule } from '../users/users.module';
 
 @Module({
-  providers: [TelegrambotService]
+  imports: [UsersModule],
+  providers: [TelegrambotService],
+  exports: [TelegrambotService],
 })
 export class TelegrambotModule {}
